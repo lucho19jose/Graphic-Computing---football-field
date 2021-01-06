@@ -692,11 +692,50 @@
 						1000));
 			}
 
-			//geometrysss.rotateX(90);
-			//geometrysss.rotateY(-90);
-			//geometrysss.rotateZ(-90);
+			var circleDraw = new THREE.Line(geometrysss, materialsss)
 
-			scene.add(new THREE.Line(geometrysss, materialsss));
+			circleDraw.position.y = -1250;
+			circleDraw.position.z = 1000;
+
+			circleDraw.rotateX((Math.PI) * -1 / 2);
+			circleDraw.rotateY(0);
+			circleDraw.rotateZ(0);
+
+			scene.add(circleDraw);
+			//trying
+			var rotWorldMatrix;
+			// Rotate an object around an arbitrary axis in world space       
+			function rotateAroundWorldAxis(object, axis, radians) {
+				rotWorldMatrix = new THREE.Matrix4();
+				rotWorldMatrix.makeRotationAxis(axis.normalize(), radians);
+
+				// old code for Three.JS pre r54:
+				//  rotWorldMatrix.multiply(object.matrix);
+				// new code for Three.JS r55+:
+				rotWorldMatrix.multiply(object.matrix);                // pre-multiply
+
+				object.matrix = rotWorldMatrix;
+
+				// old code for Three.js pre r49:
+				// object.rotation.getRotationFromMatrix(object.matrix, object.scale);
+				// old code for Three.js pre r59:
+				// object.rotation.setEulerFromRotationMatrix(object.matrix);
+				// code for r59+:
+				object.rotation.setFromRotationMatrix(object.matrix);
+			}
+
+			//rotateAroundWorldAxis(mesh, axis, Math.PI / 180);
+			//...new circle
+			//const geometryC = new THREE.CircleGeometry(100);
+			//const materialC = new THREE.MeshLambertMaterial({ wireframe: true, opacity: 0.5 });
+			//const circleC = new THREE.Mesh(geometryC, materialC);
+			//circleC.position.z = 1000;
+			//circleC.position.y = -249;
+			//circleC.rotateX((Math.PI) * -1 / 2);
+			//circleC.rotateY(0);
+			//circleC.rotateZ(0);
+			//
+			//scene.add(circleC);
 
 			//...CylinderGeometry
 
@@ -707,7 +746,7 @@
 			cylinder.position.y = -250;
 			cylinder.position.z = 1000;
 
-			scene.add(cylinder);
+			//	scene.add(cylinder);
 
 			// controls
 			const controls = new OrbitControls(camera, renderer.domElement);
