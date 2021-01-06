@@ -674,7 +674,8 @@
 			circle.position.y = -130;
 			circle.position.z = 1000;
 			scene.add(circle);
-			//another circle
+
+			//Middle circle
 			var segmentCount = 32,
 				radius = 100,
 				geometrysss = new THREE.Geometry(),
@@ -702,40 +703,55 @@
 			circleDraw.rotateZ(0);
 
 			scene.add(circleDraw);
-			//trying
-			var rotWorldMatrix;
-			// Rotate an object around an arbitrary axis in world space       
-			function rotateAroundWorldAxis(object, axis, radians) {
-				rotWorldMatrix = new THREE.Matrix4();
-				rotWorldMatrix.makeRotationAxis(axis.normalize(), radians);
 
-				// old code for Three.JS pre r54:
-				//  rotWorldMatrix.multiply(object.matrix);
-				// new code for Three.JS r55+:
-				rotWorldMatrix.multiply(object.matrix);                // pre-multiply
+			//corner circle/4 lefth-down 
+			/* 	const geometryC = new THREE.CircleGeometry(100, 32, Math.PI, (Math.PI) * 1 / 2);
+				const materialC = new THREE.MeshLambertMaterial({ wireframe: false, opacity: 0.5 });
+				const circleC = new THREE.Mesh(geometryC, materialC);
+				circleC.position.x = 1000;
+				circleC.position.z = 0;
+				circleC.position.y = -249;
+				circleC.rotateX((Math.PI) * -1 / 2);
+				circleC.rotateY(0);
+				circleC.rotateZ(0);
+	
+				scene.add(circleC); */
 
-				object.matrix = rotWorldMatrix;
+			//corner circle/4 right-down
+			//funcion to draw corners 
+			function corner(positionx, positiony, positionz, rotatex, rotatey, rotatez) {
+				var segmentCountCorner1 = 32,
+					radiusCorner1 = 100,
+					geometryCorner1 = new THREE.Geometry(),
+					materialCorner1 = new THREE.LineBasicMaterial({ color: 0xFFFFFF });
 
-				// old code for Three.js pre r49:
-				// object.rotation.getRotationFromMatrix(object.matrix, object.scale);
-				// old code for Three.js pre r59:
-				// object.rotation.setEulerFromRotationMatrix(object.matrix);
-				// code for r59+:
-				object.rotation.setFromRotationMatrix(object.matrix);
+				for (var i = 1; i <= segmentCountCorner1; i++) {
+					var theta = (i / segmentCountCorner1) * Math.PI / 2;
+					geometryCorner1.vertices.push(
+						new THREE.Vector3(
+							Math.cos(theta) * radiusCorner1,
+							Math.sin(theta) * radiusCorner1,
+							1000));
+				}
+
+				var circleDrawCorner1 = new THREE.Line(geometryCorner1, materialCorner1)
+
+				circleDrawCorner1.position.x = positionx;
+				circleDrawCorner1.position.y = positiony;
+				circleDrawCorner1.position.z = positionz;
+
+				circleDrawCorner1.rotateX(rotatex);
+				circleDrawCorner1.rotateY(rotatey);
+				circleDrawCorner1.rotateZ(rotatez);
+
+				scene.add(circleDrawCorner1);
 			}
-
-			//rotateAroundWorldAxis(mesh, axis, Math.PI / 180);
-			//...new circle
-			//const geometryC = new THREE.CircleGeometry(100);
-			//const materialC = new THREE.MeshLambertMaterial({ wireframe: true, opacity: 0.5 });
-			//const circleC = new THREE.Mesh(geometryC, materialC);
-			//circleC.position.z = 1000;
-			//circleC.position.y = -249;
-			//circleC.rotateX((Math.PI) * -1 / 2);
-			//circleC.rotateY(0);
-			//circleC.rotateZ(0);
-			//
-			//scene.add(circleC);
+			//drawing corners
+			corner(-1000, -1250, 0, (Math.PI) * -1 / 2, 0, 3 / 2 * Math.PI);
+			corner(-1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 0);
+			corner(1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 1 / 2 * Math.PI);
+			corner(1000, -1250, 0, (Math.PI) * -1 / 2, 0, Math.PI);
+			//...finish
 
 			//...CylinderGeometry
 
