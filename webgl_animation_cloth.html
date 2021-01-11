@@ -516,6 +516,7 @@
 			mesh = new THREE.Mesh(poleGeo, poleMat);
 			mesh.position.x = - 125;
 			mesh.position.y = - 62;
+			mesh.position.z = -500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -523,6 +524,7 @@
 			mesh = new THREE.Mesh(poleGeo, poleMat);
 			mesh.position.x = 125;
 			mesh.position.y = - 62;
+			mesh.position.z = -500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -530,14 +532,17 @@
 			mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(255, 5, 5), poleMat);
 			mesh.position.y = - 250 + (750 / 2);
 			mesh.position.x = 0;
+			mesh.position.z = -500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
 
+			//...las patillas del arco
 			const gg = new THREE.BoxBufferGeometry(10, 10, 10);
 			mesh = new THREE.Mesh(gg, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = 125;
+			mesh.position.z = -500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -545,6 +550,7 @@
 			mesh = new THREE.Mesh(gg, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = - 125;
+			mesh.position.z = - 500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -610,7 +616,7 @@
 
 			cube2.position.x = -100;
 			cube2.position.y = -130;
-			cube2.position.z = -300;
+			cube2.position.z = -1000;
 
 			scene.add(cube2);
 			//... behind cube
@@ -650,14 +656,14 @@
 			});
 
 			const points = [];
-			points.push(new THREE.Vector3(- 1000, -250, 0));
-			points.push(new THREE.Vector3(1000, -250, 0));
+			points.push(new THREE.Vector3(- 1000, -250, -500));
+			points.push(new THREE.Vector3(1000, -250, -500));
 			points.push(new THREE.Vector3(1000, -250, 2000));//...lateral derecho
 			points.push(new THREE.Vector3(-1000, -250, 2000));
-			points.push(new THREE.Vector3(-1000, -250, 0));
+			points.push(new THREE.Vector3(-1000, -250, -500));//line lateral right
 			//...center line
-			points.push(new THREE.Vector3(-1000, -250, 1000));
-			points.push(new THREE.Vector3(1000, -250, 1000));
+			points.push(new THREE.Vector3(-1000, -250, 750));
+			points.push(new THREE.Vector3(1000, -250, 750));
 
 			const geometryLine = new THREE.BufferGeometry().setFromPoints(points);
 
@@ -696,7 +702,7 @@
 			var circleDraw = new THREE.Line(geometrysss, materialsss)
 
 			circleDraw.position.y = -1250;
-			circleDraw.position.z = 1000;
+			circleDraw.position.z = 750;
 
 			circleDraw.rotateX((Math.PI) * -1 / 2);
 			circleDraw.rotateY(0);
@@ -747,10 +753,10 @@
 				scene.add(circleDrawCorner1);
 			}
 			//drawing corners
-			corner(-1000, -1250, 0, (Math.PI) * -1 / 2, 0, 3 / 2 * Math.PI);
+			corner(-1000, -1250, -500, (Math.PI) * -1 / 2, 0, 3 / 2 * Math.PI);
 			corner(-1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 0);
 			corner(1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 1 / 2 * Math.PI);
-			corner(1000, -1250, 0, (Math.PI) * -1 / 2, 0, Math.PI);
+			corner(1000, -1250, -500, (Math.PI) * -1 / 2, 0, Math.PI);
 			//...finish
 
 			//...CylinderGeometry
