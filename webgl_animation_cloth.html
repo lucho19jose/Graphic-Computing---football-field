@@ -611,6 +611,8 @@
 				new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
 				new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
 				new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
+
+				
 			];
 			var cube2 = new THREE.Mesh(geometry1, materials);
 
@@ -630,15 +632,62 @@
 
 			scene.add(cube3);
 			//... lateral
-			const geometry3 = new THREE.BoxGeometry(100, 200, 1700);
+			const geometry3 = new THREE.BoxGeometry(100, 200, 2500);
 			const cubeMaterial3 = new THREE.MeshBasicMaterial({ color: 0x91622C });
 			var cube4 = new THREE.Mesh(geometry3, cubeMaterial3);
 
-			cube4.position.x = 2000;
+			cube4.position.x = 1500;
 			cube4.position.y = -130;
-			cube4.position.z = 1000;
+			cube4.position.z = 750;
 
 			scene.add(cube4);
+
+			//lateral derecho
+
+			//lateral derecho 1
+			const geometry4 = new THREE.BoxGeometry(100, 100, 2500);
+			const cubeMaterial4 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cube5 = new THREE.Mesh(geometry4, cubeMaterial4);
+
+			cube5.position.x = -1500;
+			cube5.position.y = -230;
+			cube5.position.z = 750;
+
+			scene.add(cube5);
+
+			//lateral derecho 2
+			const geometry5 = new THREE.BoxGeometry(100, 150, 2500);
+			const cubeMaterial5 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cube6 = new THREE.Mesh(geometry5, cubeMaterial5);
+
+			cube6.position.x = -1600;
+			cube6.position.y = -190;
+			cube6.position.z = 750;
+
+			scene.add(cube6);
+
+			//lateral derecho 3
+			const geometry6 = new THREE.BoxGeometry(100, 200, 2500);
+			const cubeMaterial6 = new THREE.MeshBasicMaterial({ color: 0xEB671D });
+			var cube7 = new THREE.Mesh(geometry6, cubeMaterial6);
+
+			cube7.position.x = -1700;
+			cube7.position.y = -150;
+			cube7.position.z = 750;
+
+			scene.add(cube7);
+
+			//lateral derecho 4
+			const geometry7 = new THREE.BoxGeometry(100, 300, 2500);
+			const cubeMaterial7 = new THREE.MeshBasicMaterial({ color: 0xEB675D });
+			var cube8 = new THREE.Mesh(geometry7, cubeMaterial7);
+
+			cube8.position.x = -1800;
+			cube8.position.y = -150;
+			cube8.position.z = 750;
+
+			scene.add(cube8);
+
 
 			renderer = new THREE.WebGLRenderer({ antialias: true });
 			renderer.setPixelRatio(window.devicePixelRatio);
@@ -649,6 +698,9 @@
 			renderer.outputEncoding = THREE.sRGBEncoding;
 
 			renderer.shadowMap.enabled = true;
+
+			
+			
 
 			//...lines
 			const materialLine = new THREE.LineBasicMaterial({
