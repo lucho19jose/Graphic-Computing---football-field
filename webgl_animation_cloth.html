@@ -426,7 +426,7 @@
 			// camera
 
 			camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 10000);
-			camera.position.set(1000, 50, 1500);
+			camera.position.set(3000, 300, 1500); //...near or hear/there
 
 			// lights
 
@@ -516,7 +516,7 @@
 			mesh = new THREE.Mesh(poleGeo, poleMat);
 			mesh.position.x = - 125;
 			mesh.position.y = - 62;
-			mesh.position.z = -500;
+			mesh.position.z = -1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -524,7 +524,7 @@
 			mesh = new THREE.Mesh(poleGeo, poleMat);
 			mesh.position.x = 125;
 			mesh.position.y = - 62;
-			mesh.position.z = -500;
+			mesh.position.z = -1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -532,7 +532,7 @@
 			mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(255, 5, 5), poleMat);
 			mesh.position.y = - 250 + (750 / 2);
 			mesh.position.x = 0;
-			mesh.position.z = -500;
+			mesh.position.z = -1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -542,7 +542,7 @@
 			mesh = new THREE.Mesh(gg, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = 125;
-			mesh.position.z = -500;
+			mesh.position.z = -1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -550,7 +550,7 @@
 			mesh = new THREE.Mesh(gg, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = - 125;
-			mesh.position.z = - 500;
+			mesh.position.z = - 1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -563,7 +563,7 @@
 			mesh = new THREE.Mesh(boxito, policito);
 			mesh.position.x = -125;
 			mesh.position.y = - 62;
-			mesh.position.z = 2000
+			mesh.position.z = 1500
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -571,7 +571,7 @@
 			mesh = new THREE.Mesh(boxito, policito);
 			mesh.position.x = 125;
 			mesh.position.y = - 62;
-			mesh.position.z = 2000
+			mesh.position.z = 1500
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -579,7 +579,7 @@
 			mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(255, 5, 5), poleMat);
 			mesh.position.y = - 250 + (750 / 2);
 			mesh.position.x = 0;
-			mesh.position.z = 2000;
+			mesh.position.z = 1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -588,7 +588,7 @@
 			mesh = new THREE.Mesh(aaa, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = 125;
-			mesh.position.z = 2000;
+			mesh.position.z = 1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -596,7 +596,7 @@
 			mesh = new THREE.Mesh(aaa, poleMat);
 			mesh.position.y = - 250;
 			mesh.position.x = - 125;
-			mesh.position.z = 2000;
+			mesh.position.z = 1500;
 			mesh.receiveShadow = true;
 			mesh.castShadow = true;
 			scene.add(mesh);
@@ -616,7 +616,7 @@
 
 			cube2.position.x = -100;
 			cube2.position.y = -130;
-			cube2.position.z = -1000;
+			cube2.position.z = -2000;
 
 			scene.add(cube2);
 			//... behind cube
@@ -656,14 +656,20 @@
 			});
 
 			const points = [];
-			points.push(new THREE.Vector3(- 1000, -250, -500));
-			points.push(new THREE.Vector3(1000, -250, -500));
-			points.push(new THREE.Vector3(1000, -250, 2000));//...lateral derecho
-			points.push(new THREE.Vector3(-1000, -250, 2000));
-			points.push(new THREE.Vector3(-1000, -250, -500));//line lateral right
+			points.push(new THREE.Vector3(- 1000, -250, -1500));
+			points.push(new THREE.Vector3(1000, -250, -1500));
+			points.push(new THREE.Vector3(1000, -250, 1500));//...lateral left up point
+			points.push(new THREE.Vector3(-1000, -250, 1500));
+			points.push(new THREE.Vector3(-1000, -250, -1500));//line lateral right
 			//...center line
-			points.push(new THREE.Vector3(-1000, -250, 750));
-			points.push(new THREE.Vector3(1000, -250, 750));
+			points.push(new THREE.Vector3(-1000, -250, 0));
+			points.push(new THREE.Vector3(1000, -250, 0));
+			//area field
+			//points.push(new THREE.Vector3(1000, -250, -1500));
+			//points.push(new THREE.Vector3(400, -250, -1500));
+			//points.push(new THREE.Vector3(400, -250, -1200));
+			//points.push(new THREE.Vector3(-400, -250, -1200));
+			//points.push(new THREE.Vector3(-400, -250, -1500));
 
 			const geometryLine = new THREE.BufferGeometry().setFromPoints(points);
 
@@ -702,7 +708,7 @@
 			var circleDraw = new THREE.Line(geometrysss, materialsss)
 
 			circleDraw.position.y = -1250;
-			circleDraw.position.z = 750;
+			circleDraw.position.z = 0;//.. before 750
 
 			circleDraw.rotateX((Math.PI) * -1 / 2);
 			circleDraw.rotateY(0);
@@ -710,20 +716,6 @@
 
 			scene.add(circleDraw);
 
-			//corner circle/4 lefth-down 
-			/* 	const geometryC = new THREE.CircleGeometry(100, 32, Math.PI, (Math.PI) * 1 / 2);
-				const materialC = new THREE.MeshLambertMaterial({ wireframe: false, opacity: 0.5 });
-				const circleC = new THREE.Mesh(geometryC, materialC);
-				circleC.position.x = 1000;
-				circleC.position.z = 0;
-				circleC.position.y = -249;
-				circleC.rotateX((Math.PI) * -1 / 2);
-				circleC.rotateY(0);
-				circleC.rotateZ(0);
-	
-				scene.add(circleC); */
-
-			//corner circle/4 right-down
 			//funcion to draw corners 
 			function corner(positionx, positiony, positionz, rotatex, rotatey, rotatez) {
 				var segmentCountCorner1 = 32,
@@ -753,10 +745,43 @@
 				scene.add(circleDrawCorner1);
 			}
 			//drawing corners
-			corner(-1000, -1250, -500, (Math.PI) * -1 / 2, 0, 3 / 2 * Math.PI);
-			corner(-1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 0);
-			corner(1000, -1250, 2000, (Math.PI) * -1 / 2, 0, 1 / 2 * Math.PI);
-			corner(1000, -1250, -500, (Math.PI) * -1 / 2, 0, Math.PI);
+			corner(-1000, -1250, -1500, (Math.PI) * -1 / 2, 0, 3 / 2 * Math.PI);
+			corner(-1000, -1250, 1500, (Math.PI) * -1 / 2, 0, 0);
+			corner(1000, -1250, 1500, (Math.PI) * -1 / 2, 0, 1 / 2 * Math.PI);
+			corner(1000, -1250, -1500, (Math.PI) * -1 / 2, 0, Math.PI);
+			//corner(800, -1250, -1500, (Math.PI) * -1 / 2, 0, Math.PI);
+
+			//...areas
+			function areafield(positionx, positiony, positionz, rotatex, rotatey, rotatez) {
+				var segmentCountCorner1 = 32,
+					radiusCorner1 = 500,
+					geometryCorner1 = new THREE.Geometry(),
+					materialCorner1 = new THREE.LineBasicMaterial({ color: 0xFFFFFF });
+
+				for (var i = 1; i <= segmentCountCorner1; i++) {
+					var theta = (i / segmentCountCorner1) * (Math.PI + 1 / 40 * Math.PI);
+					geometryCorner1.vertices.push(
+						new THREE.Vector3(
+							Math.cos(theta) * radiusCorner1,
+							Math.sin(theta) * radiusCorner1,
+							1000));
+				}
+
+				var circleDrawCorner1 = new THREE.Line(geometryCorner1, materialCorner1)
+
+				circleDrawCorner1.position.x = positionx;
+				circleDrawCorner1.position.y = positiony;
+				circleDrawCorner1.position.z = positionz;
+
+				circleDrawCorner1.rotateX(rotatex);
+				circleDrawCorner1.rotateY(rotatey);
+				circleDrawCorner1.rotateZ(rotatez);
+
+				scene.add(circleDrawCorner1);
+			}
+			//...areafield circle
+			areafield(0, -1250, -1500, (Math.PI) * -1 / 2, 0, 1 * Math.PI - 1 / 30 * Math.PI)
+			areafield(0, -1250, 1500, (Math.PI) * -1 / 2, 0, -2 * Math.PI - 1 / 30 * Math.PI)
 			//...finish
 
 			//...CylinderGeometry
@@ -774,7 +799,7 @@
 			const controls = new OrbitControls(camera, renderer.domElement);
 			controls.maxPolarAngle = Math.PI * 0.5;
 			controls.minDistance = 1000;
-			controls.maxDistance = 5000;
+			controls.maxDistance = 7000;
 
 			// performance monitor
 
