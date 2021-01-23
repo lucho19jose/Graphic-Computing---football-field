@@ -477,14 +477,21 @@
       };
 
       const models = {
-        pig:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
-        cow:    { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
-        llama:  { url: 'https://threejsfundamentals.org/threejs/resources/models/animals/Llama.gltf' },
+        mountain0: { url: 'https://threejsfundamentals.org/threejs/resources/models/mountain_landscape/scene.gltf' },
         pug:    { url: 'https://threejsfundamentals.org/threejs/resources/models/animals/Pug.gltf' },
-        sheep:  { url: 'https://threejsfundamentals.org/threejs/resources/models/animals/Sheep.gltf' },
-        zebra:  { url: 'https://threejsfundamentals.org/threejs/resources/models/animals/Zebra.gltf' },
-        horse:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
-        knight: { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player1:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player2:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player3:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player4:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player5:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player6:  { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player7: { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        player8: { url: 'https://threejsfundamentals.org/threejs/resources/models/knight/KnightCharacter.gltf' },
+        mountain1: { url: 'https://threejsfundamentals.org/threejs/resources/models/mountain_landscape/scene.gltf' },
+
+        Flamingo1:  { url: 'https://threejsfundamentals.org/threejs/resources/models/flamingo/Flamingo.glb' },
+        Flamingo2:    { url: 'https://threejsfundamentals.org/threejs/resources/models/flamingo/Flamingo.glb' },
+        Flamingo3:  { url: 'https://threejsfundamentals.org/threejs/resources/models/flamingo/Flamingo.glb' },
       };
       {
         //Cargar archivos gltf
@@ -517,25 +524,144 @@
           const clonedScene = SkeletonUtils.clone(model.gltf.scene);
           const root = new THREE.Object3D();
 
-          var payer = new THREE.Mesh( root, clonedScene );
-
           root.add(clonedScene);
           scene.add(root);
+          //Manda derecha
+          if (ndx === 0){
+            root.position.x = 0;
+            root.position.y = -520;
+            root.position.z = -7300;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 8;
+            root.rotation.x = 0;
+            // Escala
+            root.scale.x = 20;
+            root.scale.y = 20;
+            root.scale.z = 20;
+          }
           //posicion de los jugadores
-          console.log("z ", (ndx - 3) * 100);
-          root.position.y = 0;
-          root.position.x = 500 + (ndx - 3) *100;
-          root.position.z = 800;
-          root.scale.x = 30;
-          root.scale.y = 30;
-          root.scale.z = 30;
+          // Mascota
+          else if (ndx === 1) {
+            // Posicion
+            root.position.x = -1050;
+            root.position.y = -200;
+            root.position.z = 0;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = -80;
+            root.rotation.x = 0;
+          }
+          // Arquero derecho
+          else if (ndx === 2) {
+            // Posicion
+            root.position.x = 0;
+            root.position.y = -200;
+            root.position.z = -1150;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 0;
+            root.rotation.x = 0;
+          }
+          // jugadores derecho
+          else if (ndx > 2 && ndx < 6) {
+            // Posicion
+            root.position.x = -1350 + ndx * 350;
+            root.position.y = -200;
+            root.position.z = -400;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 0;
+            root.rotation.x = 0;
+          }
+          // Arquero izquierdo
+          else if (ndx === 6) {
+            // Posicion
+            root.position.x = 0;
+            root.position.y = -200;
+            root.position.z = 1150;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 198;
+            root.rotation.x = 0;
+          }
+          // Jugadores izquiedo
+          else if (ndx > 6 && ndx < 10) {
+            // Posicion
+            root.position.x = -2650 + ndx * 340;
+            root.position.y = -200;
+            root.position.z = 400;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 198;
+            root.rotation.x = 0;
+          }
+          //Mandaña del fondo
+          else if (ndx === 10){
+            root.position.x = -6000;
+            root.position.y = -520;
+            root.position.z = 0;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 8;
+            root.rotation.x = 0;
+            // Escala
+            root.scale.x = 20;
+            root.scale.y = 20;
+            root.scale.z = 20;
+          }
+          // Flamingos
+          else if (ndx === 11) {
+            // Posicion
+            root.position.x = -4000;
+            root.position.y = 500;
+            root.position.z = 0;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 0;
+            root.rotation.x = 0;
+          }
+          else if (ndx === 12) {
+            // Posicion
+            root.position.x = -400;
+            root.position.y = 500;
+            root.position.z = -3000;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 0;
+            root.rotation.x = 0;
+          }
+          else if (ndx === 13) {
+            // Posicion
+            root.position.x = -2200;
+            root.position.y = 500;
+            root.position.z = -2300;
+            // Rotacion
+            root.rotation.z = 0;
+            root.rotation.y = 0;
+            root.rotation.x = 0;
+          }
+          if (ndx > 10) {
+            // Escala
+            root.scale.x = 1;
+            root.scale.y = 1;
+            root.scale.z = 1;
+          }
+          // Escala
+          if (ndx > 0 && ndx < 10) {
+            root.scale.x = 30;
+            root.scale.y = 30;
+            root.scale.z = 30;
+          }
           root.receiveShadow = true;
           root.castShadow = true;
 
           const mixer = new THREE.AnimationMixer(clonedScene);
           const firstClip = Object.values(model.animations)[0];
-          const action = mixer.clipAction(firstClip);
-          action.play();
+          if (ndx > 0 && ndx < 10 || ndx > 10) {
+            const action = mixer.clipAction(firstClip);
+            action.play();
+          }
           mixers.push(mixer);
         });
       }
@@ -942,7 +1068,6 @@
     }
 
     function renderJugadores(now){
-      console.log('render jugadores')
       now *= 0.001;  // convert to seconds
       const deltaTime = now - then;
       then = now;
