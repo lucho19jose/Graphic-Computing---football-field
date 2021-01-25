@@ -85,7 +85,7 @@
     const windForce = new THREE.Vector3(0, 0, 0);
 
     const ballPosition = new THREE.Vector3(0, - 45, 0);
-    const ballSize = 60; //40
+    const ballSize = 40; //60
 
     const tmpForce = new THREE.Vector3();
 
@@ -331,6 +331,7 @@
 
       ballPosition.z = - Math.sin(now / 600) * 90; //+ 40;
       ballPosition.x = Math.cos(now / 400) * 70;
+      ballPosition.Y = Math.cos(now / 400) * 0;
 
       if (params.showBall) {
 
@@ -441,7 +442,7 @@
       // camera
 
       camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.set(3000, 300, 1500); //...near or hear/there
+      camera.position.set(2100, 300, 200); //...near or hear/there camera.position.set(3000, 300, 1300);
 
       // lights
 
@@ -705,10 +706,11 @@
       sphere.castShadow = true;
       sphere.receiveShadow = true;
       sphere.visible = false;
+
       scene.add(sphere);
 
       // ground
-      //
+      
       const groundTexture = loader.load('textures/grasslight-big.jpg');
       groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
       groundTexture.repeat.set(25, 25);
@@ -729,7 +731,7 @@
       const poleMat = new THREE.MeshLambertMaterial();
 
       mesh = new THREE.Mesh(poleGeo, poleMat);
-      mesh.position.x = - 125;
+      mesh.position.x = - 175;
       mesh.position.y = - 62;
       mesh.position.z = -1500;
       mesh.receiveShadow = true;
@@ -737,14 +739,14 @@
       scene.add(mesh);
 
       mesh = new THREE.Mesh(poleGeo, poleMat);
-      mesh.position.x = 125;
+      mesh.position.x = 175;
       mesh.position.y = - 62;
       mesh.position.z = -1500;
       mesh.receiveShadow = true;
       mesh.castShadow = true;
       scene.add(mesh);
 
-      mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(255, 5, 5), poleMat);
+      mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(355, 5, 5), poleMat);
       mesh.position.y = - 250 + (750 / 2);
       mesh.position.x = 0;
       mesh.position.z = -1500;
@@ -756,7 +758,7 @@
       const gg = new THREE.BoxBufferGeometry(10, 10, 10);
       mesh = new THREE.Mesh(gg, poleMat);
       mesh.position.y = - 250;
-      mesh.position.x = 125;
+      mesh.position.x = 175;
       mesh.position.z = -1500;
       mesh.receiveShadow = true;
       mesh.castShadow = true;
@@ -764,7 +766,7 @@
 
       mesh = new THREE.Mesh(gg, poleMat);
       mesh.position.y = - 250;
-      mesh.position.x = - 125;
+      mesh.position.x = - 175;
       mesh.position.z = - 1500;
       mesh.receiveShadow = true;
       mesh.castShadow = true;
@@ -776,7 +778,7 @@
       const policito = new THREE.MeshLambertMaterial();
 
       mesh = new THREE.Mesh(boxito, policito);
-      mesh.position.x = -125;
+      mesh.position.x = -175;
       mesh.position.y = - 62;
       mesh.position.z = 1500
       mesh.receiveShadow = true;
@@ -784,14 +786,14 @@
       scene.add(mesh);
 
       mesh = new THREE.Mesh(boxito, policito);
-      mesh.position.x = 125;
+      mesh.position.x = 175;
       mesh.position.y = - 62;
       mesh.position.z = 1500
       mesh.receiveShadow = true;
       mesh.castShadow = true;
       scene.add(mesh);
 
-      mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(255, 5, 5), poleMat);
+      mesh = new THREE.Mesh(new THREE.BoxBufferGeometry(355, 5, 5), poleMat);
       mesh.position.y = - 250 + (750 / 2);
       mesh.position.x = 0;
       mesh.position.z = 1500;
@@ -802,7 +804,7 @@
       const aaa = new THREE.BoxBufferGeometry(10, 10, 10);
       mesh = new THREE.Mesh(aaa, poleMat);
       mesh.position.y = - 250;
-      mesh.position.x = 125;
+      mesh.position.x = 175;
       mesh.position.z = 1500;
       mesh.receiveShadow = true;
       mesh.castShadow = true;
@@ -810,7 +812,7 @@
 
       mesh = new THREE.Mesh(aaa, poleMat);
       mesh.position.y = - 250;
-      mesh.position.x = - 125;
+      mesh.position.x = - 175;
       mesh.position.z = 1500;
       mesh.receiveShadow = true;
       mesh.castShadow = true;
