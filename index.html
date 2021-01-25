@@ -815,45 +815,980 @@
       mesh.receiveShadow = true;
       mesh.castShadow = true;
       scene.add(mesh);
-      // renderer
-      //... behind original geometry
-      const geometry1 = new THREE.BoxGeometry(2000, 200, 50);
-      const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x91622C });
-      const materials = [
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      new THREE.MeshBasicMaterial({ map: loader.load('textures/img1.jpg') }),
-      ];
-      var cube2 = new THREE.Mesh(geometry1, materials);
+     //renderer
+     
+			//------------------------------------------EMERSON------------------------------------
 
-      cube2.position.x = -100;
-      cube2.position.y = -130;
-      cube2.position.z = -2000;
+			
+			//... pared arco oeste
+			const geometrypas = new THREE.BoxGeometry(4300, 1000, 80);
+			const cubeMateriapas = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspas = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				
 
-      scene.add(cube2);
-      //... behind cube
-      const geometry2 = new THREE.BoxGeometry(2000, 200, 50);
-      const cubeMaterial2 = new THREE.MeshBasicMaterial({ color: 0x91622C });
-      var cube3 = new THREE.Mesh(geometry2, cubeMaterial2);
+				
+			];
+			var cubepas = new THREE.Mesh(geometrypas, materialspas);
 
-      cube3.position.x = -100;
-      cube3.position.y = -130;
-      cube3.position.z = 2500;
+			cubepas.position.x = 0;
+			cubepas.position.y = -130;
+			cubepas.position.z = -2000;
 
-      scene.add(cube3);
-      //... lateral
-      const geometry3 = new THREE.BoxGeometry(100, 200, 1700);
-      const cubeMaterial3 = new THREE.MeshBasicMaterial({ color: 0x91622C });
-      var cube4 = new THREE.Mesh(geometry3, cubeMaterial3);
+			scene.add(cubepas);
 
-      cube4.position.x = 2000;
-      cube4.position.y = -130;
-      cube4.position.z = 1000;
 
-      scene.add(cube4);
+			//piso arco oeste
+			const geometrypias = new THREE.BoxGeometry(4200, 25, 300);
+			const cubeMaterialpias = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspias = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				
+
+				
+			];
+			var cubepias = new THREE.Mesh(geometrypias, materialspias);
+
+			cubepias.position.x = 0;
+			cubepias.position.y = -250;
+			cubepias.position.z = -1800;
+
+			scene.add(cubepias);
+
+      //--piso lateral izquierdo 1 peque;o
+			const geometrypias1 = new THREE.BoxGeometry(700, 25, 2200);
+			const cubeMaterialpias1 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspias1 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),	
+				
+			];
+			var cubepias1 = new THREE.Mesh(geometrypias1, materialspias1);
+			cubepias1.position.x = 1800;  
+			cubepias1.position.y = -260;
+			cubepias1.position.z = -600;
+			scene.add(cubepias1);
+      
+      //-piso lateral derecho 1 peque;o
+			const geometrypias2 = new THREE.BoxGeometry(700, 25, 2200);
+			const cubeMaterialpias2 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspias2 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				
+			];
+			var cubepias2 = new THREE.Mesh(geometrypias2, materialspias2);
+			cubepias2.position.x = -1800;
+			cubepias2.position.y = -260;
+			cubepias2.position.z = -600;
+			scene.add(cubepias2);
+
+				//... pared arco este
+				const geometrypae = new THREE.BoxGeometry(3500, 1000, 80);
+				const cubeMateriapae = new THREE.MeshBasicMaterial({ color: 0x91622C });
+				const materialspae = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				
+
+				
+			];
+			var cubepae = new THREE.Mesh(geometrypae, materialspae);
+
+			cubepae.position.x = 350;
+			cubepae.position.y = -250;
+			cubepae.position.z = 5000;
+
+			scene.add(cubepae);
+
+			//piso arco este
+			const geometrypiae1 = new THREE.BoxGeometry(4200, 25, 3200);
+			const cubeMaterialpiae1 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiae1 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				
+
+				
+			];
+			var cubepiae1 = new THREE.Mesh(geometrypiae1, materialspiae1);
+
+			cubepiae1.position.x = 0;
+			cubepiae1.position.y = -250;
+			cubepiae1.position.z = 3400;
+
+			scene.add(cubepiae1);
+
+
+			//----piso peque;o
+			const geometrypiae2 = new THREE.BoxGeometry(700, 25, 1000);
+			const cubeMaterialpiae2 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiae2 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),	
+				
+			];
+			var cubepiae2 = new THREE.Mesh(geometrypiae2, materialspiae2);
+			cubepiae2.position.x = 1800;
+			cubepiae2.position.y = -260;
+			cubepiae2.position.z = 1300;
+			scene.add(cubepiae2);
+
+			//------------------------------------POSTES TECHO VEHICULOS---------------------
+
+
+			//--------POSTE 1
+			const geometrypiatv1 = new THREE.BoxGeometry(30, 3700, 30);
+			const cubeMaterialpiatv1 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiatv1 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiatv1 = new THREE.Mesh(geometrypiatv1, materialspiatv1);
+			cubepiatv1.position.x = 1900;
+			cubepiatv1.position.y = -260;
+			cubepiatv1.position.z = 2800;
+			scene.add(cubepiatv1);
+
+
+			const geometrypiattv2 = new THREE.BoxGeometry(100, 100, 100);
+			const cubeMaterialpiattv2 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiattv2 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiattv2 = new THREE.Mesh(geometrypiattv2, materialspiattv2);
+			cubepiattv2.position.x = 1900;
+			cubepiattv2.position.y = -260;
+			cubepiattv2.position.z = 2800;
+			scene.add(cubepiattv2);
+
+			//-------------POSTE 2
+			const geometrypiatv3 = new THREE.BoxGeometry(30, 3700, 30);
+			const cubeMaterialpiatv3 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiatv3 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiatv3 = new THREE.Mesh(geometrypiatv3, materialspiatv3);
+			cubepiatv3.position.x = -1900;
+			cubepiatv3.position.y = -260;
+			cubepiatv3.position.z = 2800;
+			scene.add(cubepiatv3);
+
+
+			const geometrypiattv4 = new THREE.BoxGeometry(100, 100, 100);
+			const cubeMaterialpiattv4 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiattv4 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiattv4 = new THREE.Mesh(geometrypiattv4, materialspiattv4);
+			cubepiattv4.position.x = -1900;
+			cubepiattv4.position.y = -260;
+			cubepiattv4.position.z = 2800;
+			scene.add(cubepiattv4);
+
+			//-----------------------------------POSTE 3
+					
+			const geometrypiatv5 = new THREE.BoxGeometry(30, 3700, 30);
+			const cubeMaterialpiatv5 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiatv5 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiatv5 = new THREE.Mesh(geometrypiatv5, materialspiatv5);
+			cubepiatv5.position.x = -1900;
+			cubepiatv5.position.y = -260;
+			cubepiatv5.position.z = 4400;
+			scene.add(cubepiatv5);
+
+
+			const geometrypiattv6 = new THREE.BoxGeometry(100, 100, 100);
+			const cubeMaterialpiattv6 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiattv6 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiattv6 = new THREE.Mesh(geometrypiattv6, materialspiattv6);
+			cubepiattv6.position.x = -1900;
+			cubepiattv6.position.y = -260;
+			cubepiattv6.position.z = 4400;
+			scene.add(cubepiattv6);
+
+	//-----------------------------------POSTE 4
+					
+	const geometrypiatv7 = new THREE.BoxGeometry(30, 3700, 30);
+			const cubeMaterialpiatv7 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiatv7 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiatv7 = new THREE.Mesh(geometrypiatv7, materialspiatv7);
+			cubepiatv7.position.x = 1900;
+			cubepiatv7.position.y = -260;
+			cubepiatv7.position.z = 4400;
+			scene.add(cubepiatv7);
+
+
+			const geometrypiattv8 = new THREE.BoxGeometry(100, 100, 100);
+			const cubeMaterialpiattv8 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiattv8 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiattv8 = new THREE.Mesh(geometrypiattv8, materialspiattv8);
+			cubepiattv8.position.x = 1900;
+			cubepiattv8.position.y = -260;
+			cubepiattv8.position.z = 4400;
+			scene.add(cubepiattv8);
+
+			//---------------------------postes  canchiata
+
+		
+
+			//------------poste 1
+			const geometrypiatc0 = new THREE.BoxGeometry(40, 500, 40);
+			const cubeMaterialpiatc0 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiatc0 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiatc0 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc0.position.x = 2100;
+			cubepiatc0.position.y = 1200;
+			cubepiatc0.position.z = -800;
+			scene.add(cubepiatc0);
+
+
+			
+			const geometrypiattc1 = new THREE.BoxGeometry(60, 50, 90);
+			const cubeMaterialpiattc1 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiattc1 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/postevehiculo.png') }),	
+				
+			];
+			var cubepiattc1 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc1.position.x = 2100;
+			cubepiattc1.position.y = 1120;
+			cubepiattc1.position.z = -800;
+      scene.add(cubepiattc1);
+      
+      	//------------poste aumento
+			var cubepiatc3a = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc3a.position.x = 2100;
+			cubepiatc3a.position.y = 1200;
+			cubepiatc3a.position.z = -1800;
+			scene.add(cubepiatc3a);
+
+
+			var cubepiattc4a = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc4a.position.x = 2100;
+			cubepiattc4a.position.y = 1120;
+			cubepiattc4a.position.z = -1800;
+      scene.add(cubepiattc4a);
+      
+      var cubepiatc3a1 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc3a1.position.x = -2100;
+			cubepiatc3a1.position.y = 1200;
+			cubepiatc3a1.position.z = -1800;
+			scene.add(cubepiatc3a1);
+
+
+			var cubepiattc4a1 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc4a1.position.x = -2100;
+			cubepiattc4a1.position.y = 1120;
+			cubepiattc4a1.position.z = -1800;
+			scene.add(cubepiattc4a1);
+
+			//------------poste 2
+			var cubepiatc3 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc3.position.x = 2100;
+			cubepiatc3.position.y = 1200;
+			cubepiatc3.position.z = 200;
+			scene.add(cubepiatc3);
+
+
+			var cubepiattc4 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc4.position.x = 2100;
+			cubepiattc4.position.y = 1120;
+			cubepiattc4.position.z = 200;
+			scene.add(cubepiattc4);
+
+
+			///---poste 3
+			var cubepiatc5 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc5.position.x = 2100;
+			cubepiatc5.position.y = 1200;
+			cubepiatc5.position.z = 1200;
+			scene.add(cubepiatc5);
+
+
+			var cubepiattc6 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc6.position.x = 2100;
+			cubepiattc6.position.y = 1120;
+			cubepiattc6.position.z = 1200;
+			scene.add(cubepiattc6);
+
+			///---poste 4
+			var cubepiatc7 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc7.position.x = 2100;
+			cubepiatc7.position.y = 1200;
+			cubepiatc7.position.z = 2200;
+			scene.add(cubepiatc7);
+
+
+			var cubepiattc8 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc8.position.x = 2100;
+			cubepiattc8.position.y = 1120;
+			cubepiattc8.position.z = 2200;
+			scene.add(cubepiattc8);
+
+			//------------poste 5
+			var cubepiatc9 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc9.position.x = -2100;
+			cubepiatc9.position.y = 1200;
+			cubepiatc9.position.z = -800;
+			scene.add(cubepiatc9);
+
+
+			var cubepiattc10 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc10.position.x = -2100;
+			cubepiattc10.position.y = 1120;
+			cubepiattc10.position.z = -800;
+			scene.add(cubepiattc10);
+
+			//------------poste 6
+			var cubepiatc11 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc11.position.x = -2100;
+			cubepiatc11.position.y = 1200;
+			cubepiatc11.position.z = 200;
+			scene.add(cubepiatc11);
+
+
+			var cubepiattc12 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc12.position.x = -2100;
+			cubepiattc12.position.y = 1120;
+			cubepiattc12.position.z = 200;
+			scene.add(cubepiattc12);
+
+
+			///---poste 7
+			var cubepiatc13 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc13.position.x = -2100;
+			cubepiatc13.position.y = 1200;
+			cubepiatc13.position.z = 1200;
+			scene.add(cubepiatc13);
+
+
+			var cubepiattc14 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc14.position.x = -2100;
+			cubepiattc14.position.y = 1120;
+			cubepiattc14.position.z = 1200;
+			scene.add(cubepiattc14);
+
+			///---poste 8
+			var cubepiatc15 = new THREE.Mesh(geometrypiatc0, materialspiatc0);
+			cubepiatc15.position.x = -2100;
+			cubepiatc15.position.y = 1200;
+			cubepiatc15.position.z = 2200;
+			scene.add(cubepiatc15);
+
+
+			var cubepiattc16 = new THREE.Mesh(geometrypiattc1, materialspiattc1);
+			cubepiattc16.position.x = -2100;
+			cubepiattc16.position.y = 1120;
+			cubepiattc16.position.z = 2200;
+			scene.add(cubepiattc16);
+
+			//------------------------------------------------end-------------------------------------------------
+
+
+			
+			const geometrypiae3 = new THREE.BoxGeometry(700, 25, 2000);
+			const cubeMaterialpiae3 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspiae3 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				
+			];
+			var cubepiae3 = new THREE.Mesh(geometrypiae3, materialspiae3);
+			cubepiae3.position.x = -1800;
+			cubepiae3.position.y = -260;
+			cubepiae3.position.z = 2100;
+			scene.add(cubepiae3)
+
+			//... pared izquierdo
+			const geometryti = new THREE.BoxGeometry(80, 2000, 7000);
+			const cubeMaterialti = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialsti = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				
+
+				
+			];
+			var cubeti = new THREE.Mesh(geometryti, materialsti);
+
+			cubeti.position.x = 2110;
+			cubeti.position.y = 90;
+			cubeti.position.z = 1500;
+
+			scene.add(cubeti);
+
+			//... pared derecho
+			const geometrytd = new THREE.BoxGeometry(80, 2000, 7000);
+			const cubeMaterialtd = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialstd = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/textura.png') }),
+				
+
+				
+			];
+			var cubetd = new THREE.Mesh(geometrytd, materialstd);
+
+			cubetd.position.x = -2110;
+			cubetd.position.y = 90;
+			cubetd.position.z = 1500;
+
+			scene.add(cubetd);
+
+			//... lateral izquierdo
+			//lateral izquierdo 0
+			const geometryi0 = new THREE.BoxGeometry(300, 25, 4000);
+			const cubeMateriali0 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialsi0 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+
+				
+			];
+			var cubei0 = new THREE.Mesh(geometryi0, materialsi0);
+			cubei0.position.x = 1300;
+			cubei0.position.y = -260;
+			cubei0.position.z = 200;
+      scene.add(cubei0);
+      
+//-----------------------------------------------------------------------------------------------------------TECHOS
+const geometrypite1 = new THREE.BoxGeometry(4000, 25, 2800);
+			const cubeMaterialpite1 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialspite1 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/techo.png') }),
+				
+
+				
+			];
+			var cubepite1 = new THREE.Mesh(geometrypite1, materialspite1);
+
+			cubepite1.position.x = 0;
+			cubepite1.position.y = 1600;
+			cubepite1.position.z = 4000;
+
+			scene.add(cubepite1);
+
+//-----------------
+
+const geometryt00 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt00 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5 } );
+const torust00 = new THREE.Mesh( geometryt00, materialt00 );
+
+torust00.position.x = 0;
+torust00.position.y = 500;
+torust00.position.z = -1440;
+scene.add( torust00 );
+
+
+const geometryt110 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt110 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5  } );
+const torust110 = new THREE.Mesh( geometryt110, materialt110 );
+
+torust110.position.x = 0;
+torust110.position.y =500;
+torust110.position.z = -1680;
+scene.add( torust110 );
+
+
+const geometryt220 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt220 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust220 = new THREE.Mesh( geometryt220, materialt220 );
+
+torust220.position.x = 0;
+torust220.position.y =500;
+torust220.position.z = -1920;
+scene.add( torust220 );
+
+
+const geometryt330 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt330 = new THREE.MeshBasicMaterial( { color: 0xE13814  } );
+const torust330 = new THREE.Mesh( geometryt330, materialt330 );
+
+torust330.position.x = 0;
+torust330.position.y =500;
+torust330.position.z = -2160;
+scene.add( torust330 );
+
+//----------------
+
+const geometryt0 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt0 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust0 = new THREE.Mesh( geometryt0, materialt0 );
+
+torust0.position.x = 0;
+torust0.position.y = 500;
+torust0.position.z = -1200;
+scene.add( torust0 );
+
+const geometryt1 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt1 = new THREE.MeshBasicMaterial( { color: 0xE13814  } );
+const torust1 = new THREE.Mesh( geometryt1, materialt1 );
+
+torust1.position.x = 0;
+torust1.position.y =500;
+torust1.position.z = -960;
+scene.add( torust1 );
+
+
+const geometryt2 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt2 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5 } );
+const torust2 = new THREE.Mesh( geometryt2, materialt2 );
+
+torust2.position.x = 0;
+torust2.position.y =500;
+torust2.position.z = -720;
+scene.add( torust2 );
+
+
+const geometryt3 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt3 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5  } );
+const torust3 = new THREE.Mesh( geometryt3, materialt3 );
+
+torust3.position.x = 0;
+torust3.position.y =500;
+torust3.position.z = -480;
+scene.add( torust3 );
+
+const geometryt4 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt4 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust4 = new THREE.Mesh( geometryt4, materialt4 );
+
+torust4.position.x = 0;
+torust4.position.y = 500;
+torust4.position.z = -240;
+scene.add( torust4 );
+
+//
+
+const geometryt5 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt5 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust5 = new THREE.Mesh( geometryt5, materialt5 );
+
+torust5.position.x = 0;
+torust5.position.y =500;
+torust5.position.z = 0;
+scene.add( torust5 );
+
+
+const geometryt6 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt6 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5 } );
+const torust6 = new THREE.Mesh( geometryt6, materialt6 );
+
+torust6.position.x = 0;
+torust6.position.y =500;
+torust6.position.z = 240;
+scene.add( torust6 );
+
+
+const geometryt7 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt7 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5  } );
+const torust7 = new THREE.Mesh( geometryt7, materialt7 );
+
+torust7.position.x = 0;
+torust7.position.y =500;
+torust7.position.z = 480;
+scene.add( torust7 );
+
+const geometryt8 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt8 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust8 = new THREE.Mesh( geometryt8, materialt8 );
+
+torust8.position.x = 0;
+torust8.position.y = 500;
+torust8.position.z = 720;
+scene.add( torust8 );
+
+//
+
+const geometryt9 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt9 = new THREE.MeshBasicMaterial( { color: 0xE13814  } );
+const torust9 = new THREE.Mesh( geometryt9, materialt9 );
+
+torust9.position.x = 0;
+torust9.position.y =500;
+torust9.position.z = 960;
+scene.add( torust9 );
+
+
+const geometryt10 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt10 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5 } );
+const torust10 = new THREE.Mesh( geometryt10, materialt10 );
+
+torust10.position.x = 0;
+torust10.position.y =500;
+torust10.position.z = 1200;
+scene.add( torust10 );
+
+
+const geometryt11 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt11 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5  } );
+const torust11 = new THREE.Mesh( geometryt11, materialt11 );
+
+torust11.position.x = 0;
+torust11.position.y =500;
+torust11.position.z = 1440;
+scene.add( torust11 );
+
+///------------
+const geometryt12 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt12 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust12 = new THREE.Mesh( geometryt12, materialt12 );
+
+torust12.position.x = 0;
+torust12.position.y = 500;
+torust12.position.z = 1680;
+scene.add( torust12 );
+
+//
+
+const geometryt13 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt13 = new THREE.MeshBasicMaterial( { color: 0xE13814  } );
+const torust13 = new THREE.Mesh( geometryt13, materialt13 );
+
+torust13.position.x = 0;
+torust13.position.y =500;
+torust13.position.z = 1920;
+scene.add( torust13 );
+
+
+const geometryt14 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt14 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5 } );
+const torust14 = new THREE.Mesh( geometryt14, materialt14 );
+
+torust14.position.x = 0;
+torust14.position.y =500;
+torust14.position.z = 2160;
+scene.add( torust14 );
+
+
+const geometryt15 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt15 = new THREE.MeshBasicMaterial( { color: 0xBBC4C5  } );
+const torust15 = new THREE.Mesh( geometryt15, materialt15 );
+
+torust15.position.x = 0;
+torust15.position.y =500;
+torust15.position.z = 2400;
+scene.add( torust15 );
+
+const geometryt16 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt16 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust16 = new THREE.Mesh( geometryt16, materialt16 );
+
+torust16.position.x = 0;
+torust16.position.y = 500;
+torust16.position.z = 2640;
+scene.add( torust16 );
+
+//
+
+const geometryt17 = new THREE.TorusGeometry( 2400, 120, 160, 10, 1* Math.PI);
+const materialt17 = new THREE.MeshBasicMaterial( { color: 0xE13814 } );
+const torust17 = new THREE.Mesh( geometryt17, materialt17 );
+
+torust17.position.x = 0;
+torust17.position.y =500;
+torust17.position.z = 2880;
+scene.add( torust17 );
+//----------------------------------------------------------------------------------------------------------------------------------
+
+			//lateral izquierdo 1
+			const geometryi1 = new THREE.BoxGeometry(100, 100, 2500);
+			const cubeMateriali1 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cubei1 = new THREE.Mesh(geometryi1, cubeMateriali1);
+
+			cubei1.position.x = 1500;
+			cubei1.position.y = -230;
+			cubei1.position.z = 0;
+
+			scene.add(cubei1);
+
+			//lateral izquierdo 2
+			const geometryi2 = new THREE.BoxGeometry(100, 150, 2500);
+			const cubeMateriali2 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cubei2 = new THREE.Mesh(geometryi2, cubeMateriali2);
+
+			cubei2.position.x = 1600;
+			cubei2.position.y = -190;
+			cubei2.position.z = 0;
+
+			scene.add(cubei2);
+
+			//lateral izquierdo 3
+			const geometryi3 = new THREE.BoxGeometry(100, 200, 2500);
+			const cubeMateriali3 = new THREE.MeshBasicMaterial({ color: 0xEB671D });
+			var cubei3 = new THREE.Mesh(geometryi3, cubeMateriali3);
+
+			cubei3.position.x = 1700;
+			cubei3.position.y = -150;
+			cubei3.position.z = 0;
+
+			scene.add(cubei3);
+
+			//lateral izquierdo 4
+			const geometryi4 = new THREE.BoxGeometry(100, 250, 2500);
+			const cubeMateriali4 = new THREE.MeshBasicMaterial({ color: 0xEB671D });
+			var cubei4 = new THREE.Mesh(geometryi4, cubeMateriali4);
+
+			cubei4.position.x = 1800;
+			cubei4.position.y = -130;
+			cubei4.position.z = 0;
+
+			scene.add(cubei4);
+
+			//lateral izquierdo 5
+			const geometryi5 = new THREE.BoxGeometry(100, 300, 2500);
+			const cubeMateriali5 = new THREE.MeshBasicMaterial({ color: 0xE21618});
+			var cubei5 = new THREE.Mesh(geometryi5, cubeMateriali5);
+
+			cubei5.position.x = 1900;
+			cubei5.position.y = -110;
+			cubei5.position.z = 0;
+
+			scene.add(cubei5);
+
+			//lateral izquierdo 6
+			const geometryi6 = new THREE.BoxGeometry(100, 350, 2500);
+			const cubeMateriali6 = new THREE.MeshBasicMaterial({ color: 0xE21618});
+			var cubei6 = new THREE.Mesh(geometryi6, cubeMateriali6);
+
+			cubei6.position.x = 2000;
+			cubei6.position.y = -90;
+			cubei6.position.z = 0;
+
+			scene.add(cubei6);
+
+
+			//lateral derecho
+       //lateral derecho 0
+        
+				const geometryd0 = new THREE.BoxGeometry(300,25, 5000);
+			const cubeMateriald0 = new THREE.MeshBasicMaterial({ color: 0x91622C });
+			const materialsd0 = [
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				new THREE.MeshBasicMaterial({ map: loader.load('textures/texturapiso.png') }),
+				
+
+				
+			];
+			var cubed0 = new THREE.Mesh(geometryd0, materialsd0);
+
+			cubed0.position.x = -1300;
+			cubed0.position.y = -260;
+			cubed0.position.z = 750;
+
+			scene.add(cubed0);
+
+			//lateral derecho 1
+			const geometryd1 = new THREE.BoxGeometry(100, 100, 2500);
+			const cubeMateriald1 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cubed1 = new THREE.Mesh(geometryd1, cubeMateriald1);
+
+			cubed1.position.x = -1500;
+			cubed1.position.y = -230;
+			cubed1.position.z = 0;
+
+			scene.add(cubed1);
+
+			//lateral derecho 2
+			const geometryd2 = new THREE.BoxGeometry(100, 150, 2500);
+			const cubeMateriald2 = new THREE.MeshBasicMaterial({ color: 0xFDE915 });
+			var cubed2 = new THREE.Mesh(geometryd2, cubeMateriald2);
+
+			cubed2.position.x = -1600;
+			cubed2.position.y = -190;
+			cubed2.position.z = 0;
+
+			scene.add(cubed2);
+
+			//lateral derecho 3
+			const geometryd3 = new THREE.BoxGeometry(100, 200, 2500);
+			const cubeMateriald3 = new THREE.MeshBasicMaterial({ color: 0xEB671D });
+			var cubed3 = new THREE.Mesh(geometryd3, cubeMateriald3);
+
+			cubed3.position.x = -1700;
+			cubed3.position.y = -150;
+			cubed3.position.z = 0;
+
+			scene.add(cubed3);
+
+			//lateral derecho 4
+			const geometryd4 = new THREE.BoxGeometry(100, 250, 2500);
+			const cubeMateriald4 = new THREE.MeshBasicMaterial({ color: 0xEB671D });
+			var cubed4 = new THREE.Mesh(geometryd4, cubeMateriald4);
+
+			cubed4.position.x = -1800;
+			cubed4.position.y = -130;
+			cubed4.position.z = 0;
+
+			scene.add(cubed4);
+
+			//lateral derecho 5
+			const geometryd5 = new THREE.BoxGeometry(100, 300, 2500);
+			const cubeMateriald5 = new THREE.MeshBasicMaterial({ color: 0xE21618});
+			var cubed5 = new THREE.Mesh(geometryd5, cubeMateriald5);
+
+			cubed5.position.x = -1900;
+			cubed5.position.y = -110;
+			cubed5.position.z = 0;
+
+			scene.add(cubed5);
+
+			//lateral derecho 6
+			const geometryd6 = new THREE.BoxGeometry(100, 350, 2500);
+			const cubeMateriald6 = new THREE.MeshBasicMaterial({ color: 0xE21618});
+			var cubed6 = new THREE.Mesh(geometryd6, cubeMateriald6);
+
+			cubed6.position.x = -2000;
+			cubed6.position.y = -90;
+			cubed6.position.z = 0;
+
+			scene.add(cubed6);
+
+
+
 
       renderer = new THREE.WebGLRenderer({ antialias: true });
       renderer.setPixelRatio(window.devicePixelRatio);
@@ -1014,7 +1949,7 @@
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.maxPolarAngle = Math.PI * 0.5;
       controls.minDistance = 1000;
-      controls.maxDistance = 7000;
+      controls.maxDistance = 12000;
 
       // performance monitor
 
